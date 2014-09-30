@@ -35,6 +35,7 @@ var packageJson = require('./package.json');
     .option('-c, --config <file>', 'set the path to the config file. defaults to ./htmldoc.yaml')
     .option('-u, --urls <urls>', 'comma seperated list of urls to test')
     .option('-r, --reporter <default|table>', 'The results reporter to use')
+    .option('-C, --cache <path>', 'Path to the HMTL cache')
     .option('-v, --verbose', 'Show additional log messages')
     .option('-V, --version', 'Show current version')
     .parse(process.argv);
@@ -49,7 +50,8 @@ var packageJson = require('./package.json');
   }
 
   config = _.defaults(config, {
-    reporter: program.reporter
+    reporter: program.reporter,
+    cache: program.cache
   });
 
   /*
