@@ -1,0 +1,12 @@
+files: ['../html/**/*.html']
+
+unicorn:
+  host: http://www.myunicorn.co.uk
+  path: /unicorn/check
+
+parallel: 3
+
+
+timeout: 60000
+
+cache: ./.htmlcache
