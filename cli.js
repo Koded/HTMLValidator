@@ -51,7 +51,8 @@ var packageJson = require('./package.json');
 
   config = _.defaults(config, {
     reporter: 'default',
-    cache: '/tmp'
+    cache: '/tmp',
+    basedir: './'
   });
 
   config.reporter = program.reporter ? program.reporter : config.reporter;
@@ -60,7 +61,8 @@ var packageJson = require('./package.json');
   /*
    * Change to the directory the config yaml
    */
-  process.chdir(path.dirname(configYaml));
+
+  process.chdir(path.resolve(path.dirname(configYaml), config.basedir));
 
   html(config).validateAll(config.files);
 
