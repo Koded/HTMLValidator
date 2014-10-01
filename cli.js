@@ -50,9 +50,12 @@ var packageJson = require('./package.json');
   }
 
   config = _.defaults(config, {
-    reporter: program.reporter,
-    cache: program.cache
+    reporter: 'default',
+    cache: '/tmp'
   });
+
+  config.reporter = program.reporter ? program.reporter : config.reporter;
+  config.cache = program.cache ? program.cache : config.cache;
 
   /*
    * Change to the directory the config yaml
