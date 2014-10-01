@@ -45,7 +45,6 @@ var packageJson = require('./package.json');
   try {
     config = yaml.safeLoad(fs.readFileSync(configYaml, 'utf8'));
   } catch (e) {
-
     logger.log(e, logger.LOG_CRITICAL);
   }
 
