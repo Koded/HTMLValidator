@@ -63,6 +63,9 @@ var packageJson = require('./package.json');
 
   process.chdir(path.resolve(path.dirname(configYaml), config.basedir));
 
-  html(config).validateAll(config.files);
+  html(config).validateAll(config.files, function(total) {
+    var exit = total === 0 ? 0 : 1;
+    process.exit(exit);
+  });
 
 })();

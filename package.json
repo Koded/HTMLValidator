@@ -12,6 +12,7 @@
   "author": "Jon Brace",
   "license": "ISC",
   "devDependencies": {
+    "es6-promise": "^2.0.1",
     "jasmine-node": "1.14.5",
     "proxyquire": "1.0.1",
     "rewire": "2.1.0"
